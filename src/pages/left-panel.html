@@ -1,0 +1,35 @@
+<template bindable="router">
+  <!-- Panels overlay-->
+  <div class="panel-overlay"></div>
+  <!-- Left panel with reveal effect-->
+  <div class="panel panel-left panel-cover">
+    <div class="view navbar-fixed">
+      <div class="pages">
+        <div data-page="panel-left" class="page">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="center">RuMobile</div>
+            </div>
+          </div>
+          <div class="page-content">
+            <div class="content-block-title"></div>
+            <div class="list-block">
+              <ul>
+                <li repeat.for="route of router.navigation">
+                  <a href.bind="route.href" class="item-link close-panel">
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon material-icons">${route.settings.icon}</i></div>
+                      <div class="item-inner">
+                        <div class="item-title">${route.title}</div>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

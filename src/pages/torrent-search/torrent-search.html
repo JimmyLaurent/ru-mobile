@@ -1,0 +1,59 @@
+<template>
+
+  <require from="./torrent-search-detail"></require>
+  <torrent-search-detail containerless parent-vm.bind="vm" torrent.two-way="currentTorrent"></torrent-search-detail>
+
+  <require from="../../resources/elements/smart-select"></require>
+
+  <div class="page navbar-fixed page-on-center" data-page="main-page" ref="mainPage">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="left"><a class="link open-panel icon-only"><i class="icon material-icons">list</i></a></div>
+        <div class="center">${title}</div>
+      </div>
+    </div>
+
+    <form class="searchbar" ref="searchBar" submit.trigger="searchTorrents()">
+      <div class="searchbar-input">
+        <input type="search" placeholder="Search" ref="queryInput" value.bind="queryText">
+        <a href="#" class="searchbar-clear"></a>
+      </div>
+      <a href="#" class="searchbar-cancel">Cancel</a>
+    </form>
+
+
+    <div class="page-content">
+
+      <div class="list-block list-block-no-top-margin">
+        <ul>
+          <li>
+            <smart-select source.bind="sites" label="Site" value.two-way="selectedSite"></smart-select>
+          </li>
+          <li>
+            <smart-select source.bind="selectedSite.cats" label="Catergory" value.two-way="selectedCategory"></smart-select>
+          </li>
+        </ul>
+      </div>
+      <div class="list-block media-list">
+        <ul>
+          <li class="swipeout" repeat.for="torrent of torrents">
+            <div class="swipeout-content item-content" click.delegate="goToTorrentDetail(torrent)">
+              <div class="item-inner">
+                <div class="item-title-row">
+                  <div class="item-title">${torrent.name}</div>
+                  <div class="item-after"></div>
+                </div>
+                <div class="item-subtitle">Size: ${torrent.sizeHumanized} Leechers: ${torrent.peers} Seeders: ${torrent.seeds} Time: ${torrent.timeHumanized}
+                </div>
+                <div class="item-text"></div>
+              </div>
+            </div>
+            <div class="swipeout-actions-right">
+              <a class="action1 bg-green swipeout-close" click.trigger="download(torrent)">Download</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,16 @@
+<template>
+  <div class="statusbar-overlay"></div>
+
+  <require from="./pages/left-panel.html"></require>
+  <left-panel router.bind="router"></left-panel>
+
+  <div class="views">
+    <div class="view view-main">
+      <div class="pages navbar-fixed">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
+  <require from="./resources/elements/popover"></require>
+  <popover></popover>
+</template>

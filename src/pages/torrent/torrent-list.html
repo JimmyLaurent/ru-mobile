@@ -1,0 +1,37 @@
+<template>
+  <require from="../../resources/elements/progress-bar"></require>
+  
+  <div class="list-block media-list">
+    <ul>
+      <li class="swipeout" repeat.for="torrent of torrents">
+        <div class="swipeout-content item-content">
+          <div class="item-inner">
+            
+            <div class="item-title-row">
+              <div class="item-title">${torrent.name}</div>
+              <div class="item-after"> ${torrent.done === 1000 ? '' : torrent.etaHumanized}</div>
+            </div>
+            
+            <div if.bind="torrent.done !== 1000" class="item-subtitle">${torrent.downloadedHumanized} of ${torrent.sizeHumanized} (${torrent.done / 10} %)</div>
+            <div if.bind="torrent.done === 1000" class="item-subtitle">DL ${torrent.sizeHumanized} / UP ${torrent.uploadedHumanized} (${torrent.done / 10} %)</div>
+            
+            <progress-bar percent.bind="torrent.percent"></progress-bar>
+
+            <div class="item-title-row">
+              <div class="item-subtitle">${torrent.status}</div>
+              <div class="item-after">${torrent.done === 1000 ? 'Ratio: ' + (torrent.ratio/1000) : ''} ${torrent.dl !== 0 ? '↓ ' + torrent.dlHumanized
+                : ''} ${torrent.ul !== 0 ? '↑ ' + torrent.ulHumanized : ''}</div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="swipeout-actions-right">
+          <a if.bind="!torrent.isStoppable" class="action1 bg-orange swipeout-close" click.trigger="toggleTorrentState(torrent)">Start</a>
+          <a if.bind="torrent.isStoppable" class="action1 bg-orange swipeout-close" click.trigger="toggleTorrentState(torrent)">Stop</a>
+          <a class="action2 bg-red" click.trigger="deleteTorrent(torrent)">Delete</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</template>

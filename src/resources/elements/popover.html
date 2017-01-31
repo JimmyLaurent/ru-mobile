@@ -1,0 +1,13 @@
+<template>
+  <!-- Links popover -->
+  <div class="popover popover-links">
+    <div class="popover-angle"></div>
+    <div class="popover-inner">
+      <div class="list-block">
+        <ul>
+          <li repeat.for="item of items"><a click.trigger='handleClick(item)' class="list-button item-link close-popover">${item.name}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>

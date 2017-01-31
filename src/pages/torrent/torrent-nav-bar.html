@@ -1,0 +1,11 @@
+<template bindable="title, totalDlSpeed, totalUlSpeed">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <div class="left"><a class="link open-panel icon-only"><i class="icon material-icons">list</i></a></div>
+      <div class="center">${title}</div>
+      <div class="right">
+        <div class="nav-bar-small-text">${'↓ ' + totalDlSpeed} ${'↑ ' + totalUlSpeed}</div>
+        <a class="link open-popover icon-only" data-popover=".popover-links"><i class="icon material-icons">more_vert</i></a>
+    </div>
+  </div>
+</template>

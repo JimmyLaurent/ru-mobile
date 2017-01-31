@@ -1,0 +1,6 @@
+plugin.description: A ruTorrent plugin for smartphones. (Not compatible with the ipad plugin)
+plugin.author: Jimmy Laurent
+plugin.version: 0.0.1
+rtorrent.need: 1
+rtorrent.remote: warning
+plugin.runlevel: 15

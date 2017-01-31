@@ -1,0 +1,16 @@
+<template>
+  <a class="item-link smart-select" data-open-in="picker" data-back-on-select="true">
+    <!-- select -->
+    <select value.two-way="value">
+      <option repeat.for="element of source" model.bind="element">${element.name || element}</option>
+    </select>
+    <div class="item-content">
+      <div class="item-inner">
+        <!-- Select label -->
+        <div class="item-title">${label}</div>
+        <!-- Selected value, not required -->
+        <div class="item-after" ref="valueNameElement"></div>
+      </div>
+    </div>
+  </a>
+</template>

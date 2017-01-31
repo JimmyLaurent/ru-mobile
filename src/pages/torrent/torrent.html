@@ -1,0 +1,14 @@
+<template>
+  <require from="./torrent-nav-bar.html"></require>
+  <require from="./torrent-list"></require>
+  <div class="page">
+
+    <torrent-nav-bar containerless title.bind="title" total-dl-speed.bind="torrentDatas.totalDl" total-ul-speed.bind="torrentDatas.totalUl">
+    </torrent-nav-bar>
+
+    <div class="page-content">
+      <torrent-list torrents.bind="torrents"></torrent-list>
+    </div>
+
+  </div>
+</template>
