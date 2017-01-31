@@ -1,6 +1,6 @@
 # RuMobile
 
-RuMobile is a mobile plugin for ruTorrent (supports all modern smartphones).
+RuMobile is a mobile plugin for ruTorrent (supports all moderns smartphones).
 
 ## Features
 
