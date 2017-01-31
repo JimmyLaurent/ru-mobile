@@ -9,7 +9,7 @@ RuMobile is a mobile plugin for ruTorrent (supports all moderns smartphones).
 
 ## Screenshots
 
-<img src="https://cloud.githubusercontent.com/assets/25406553/22453366/6be853be-e74c-11e6-85ac-f881e31f3bc0.png" width="260">
+<img src="https://cloud.githubusercontent.com/assets/25406553/22475398/dee44b10-e7ac-11e6-83f3-361faa7af533.png" width="400">
 
 
 ## Installation
@@ -19,6 +19,8 @@ First, you need to install "extsearch", "seedingtime" and "erasedata" plugins.
 Then download the lastest release and unzip it under the plugins folder of ruTorrent.
 
 > **Note:** NOTE: Doesn't work well with ipad plugin.
+
+You can access the plugins via the url: http://YOUR_RUTORRENT_URL/?rumobile=1
 
 #### Building from source
 
